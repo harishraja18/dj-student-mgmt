@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+<h1>
+    Read
+</h1>
+
+{% for i in studetail %}
+    {{ i.name }}
+    {{ i.rollno }}
+    {{ i.cource }} <br>
+    <hr>
+{% endfor %}
+
+<button><a href="{% url 'home' %}">GO BACK</a></button>
+
+
+{% endblock %}
