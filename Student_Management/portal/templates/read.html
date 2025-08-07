@@ -10,6 +10,7 @@
     {{ i.name }}
     {{ i.rollno }}
     {{ i.cource }} <br>
+    <button><a href="{% url 'update' i.id %}">Reright</a></button>
     <hr>
 {% endfor %}
 

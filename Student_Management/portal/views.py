@@ -17,3 +17,11 @@ def read(request):
     context = {'studetail':studetail}
     return render(request, 'read.html',context)
 
+def update(request, pk):
+    studetail = get_object_or_404(StudentModel, id = pk )
+    stdlist = StdReader(request.POST or None, instance=studetail)
+    if stdlist.is_valid():
+        stdlist.save()
+        return redirect('read')
+    context = {'stdlist':stdlist}
+    return render(request, 'update.html',context)
